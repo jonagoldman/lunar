@@ -32,6 +32,7 @@ return [
             'description' => 'Associate customer groups to this :type to determine it\'s availability.',
             'name' => [
                 'label' => 'Name',
+                'default_description' => 'Default — governs guest access',
             ],
             'enabled' => [
                 'label' => 'Enabled',
@@ -272,6 +273,11 @@ return [
     ],
     'values' => [
         'title' => 'Values',
+        'form' => [
+            'name' => [
+                'label' => 'Name',
+            ],
+        ],
         'table' => [
             'name' => [
                 'label' => 'Name',

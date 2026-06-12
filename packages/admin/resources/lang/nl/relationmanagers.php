@@ -32,6 +32,7 @@ return [
             'description' => 'Koppel klantengroepen aan dit :type om de beschikbaarheid te bepalen.',
             'name' => [
                 'label' => 'Naam',
+                'default_description' => 'Standaard — regelt toegang voor gasten',
             ],
             'enabled' => [
                 'label' => 'Ingeschakeld',
@@ -263,6 +264,11 @@ return [
     ],
     'values' => [
         'title' => 'Waarden',
+        'form' => [
+            'name' => [
+                'label' => 'Naam',
+            ],
+        ],
         'table' => [
             'name' => [
                 'label' => 'Naam',

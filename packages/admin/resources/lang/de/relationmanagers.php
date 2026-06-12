@@ -32,6 +32,7 @@ return [
             'description' => 'Kundengruppen mit diesem Produkt verknüpfen, um die Verfügbarkeit zu bestimmen.',
             'name' => [
                 'label' => 'Name',
+                'default_description' => 'Standard — steuert den Gastzugriff',
             ],
             'enabled' => [
                 'label' => 'Aktiviert',
@@ -209,6 +210,22 @@ return [
                     ],
                 ],
                 'tooltip' => 'Automatisch basierend auf Wechselkursen generiert.',
+            ],
+        ],
+    ],
+    'values' => [
+        'title' => 'Werte',
+        'form' => [
+            'name' => [
+                'label' => 'Name',
+            ],
+        ],
+        'table' => [
+            'name' => [
+                'label' => 'Name',
+            ],
+            'position' => [
+                'label' => 'Position',
             ],
         ],
     ],

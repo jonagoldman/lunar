@@ -32,6 +32,7 @@ return [
             'description' => 'Liên kết nhóm khách hàng với :type này để xác định tính khả dụng.',
             'name' => [
                 'label' => 'Tên',
+                'default_description' => 'Mặc định — quản lý quyền truy cập của khách',
             ],
             'enabled' => [
                 'label' => 'Kích hoạt',
@@ -263,6 +264,11 @@ return [
     ],
     'values' => [
         'title' => 'Giá trị',
+        'form' => [
+            'name' => [
+                'label' => 'Tên',
+            ],
+        ],
         'table' => [
             'name' => [
                 'label' => 'Tên',

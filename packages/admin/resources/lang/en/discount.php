@@ -1,5 +1,7 @@
 <?php
 
+use Lunar\Models\Discount;
+
 return [
     'plural_label' => 'Discounts',
     'label' => 'Discount',
@@ -27,21 +29,11 @@ return [
         ],
         'priority' => [
             'label' => 'Priority',
-            'helper_text' => 'Discounts with higher priority will be applied first.',
-            'options' => [
-                'low' => [
-                    'label' => 'Low',
-                ],
-                'medium' => [
-                    'label' => 'Medium',
-                ],
-                'high' => [
-                    'label' => 'High',
-                ],
-            ],
+            'helper_text' => 'A higher number means higher priority. Discounts with a higher priority are applied first. Must be between 1 and 100.',
         ],
         'stop' => [
             'label' => 'Stop other discounts applying after this one',
+            'helper_text' => 'When this discount applies, any discount with a lower priority will be skipped. Give discounts different priorities to control the order they apply in.',
         ],
         'coupon' => [
             'label' => 'Coupon',
@@ -87,16 +79,16 @@ return [
         ],
         'status' => [
             'label' => 'Status',
-            \Lunar\Models\Discount::ACTIVE => [
+            Discount::ACTIVE => [
                 'label' => 'Active',
             ],
-            \Lunar\Models\Discount::PENDING => [
+            Discount::PENDING => [
                 'label' => 'Pending',
             ],
-            \Lunar\Models\Discount::EXPIRED => [
+            Discount::EXPIRED => [
                 'label' => 'Expired',
             ],
-            \Lunar\Models\Discount::SCHEDULED => [
+            Discount::SCHEDULED => [
                 'label' => 'Scheduled',
             ],
         ],
@@ -283,8 +275,8 @@ return [
             ],
         ],
         'conditions' => [
-            'title' => 'Conditions',
-            'description' => 'Select the conditions required for the discount to apply.',
+            'title' => 'Product and Variant Conditions',
+            'description' => 'Select the product or variant conditions required for the discount to apply.',
             'actions' => [
                 'attach' => [
                     'label' => 'Add Condition',
@@ -314,6 +306,20 @@ return [
                             'label' => 'Exclusion',
                         ],
                     ],
+                ],
+            ],
+        ],
+        'collection_conditions' => [
+            'title' => 'Collection Conditions',
+            'description' => 'Select the collection conditions required for the discount to apply.',
+            'actions' => [
+                'attach' => [
+                    'label' => 'Add Condition',
+                ],
+            ],
+            'table' => [
+                'name' => [
+                    'label' => 'Name',
                 ],
             ],
         ],

@@ -17,7 +17,7 @@ class ShippingOption implements Purchasable
         public ?string $taxReference = null,
         public ?string $option = null,
         public bool $collect = false,
-        public ?array $meta = null
+        public ?array $meta = null,
     ) {
         //  ..
     }
@@ -25,7 +25,7 @@ class ShippingOption implements Purchasable
     /**
      * Get the price for the purchasable item.
      *
-     * @return \Lunar\DataTypes\Price
+     * @return Price
      */
     public function getPrice()
     {
@@ -109,6 +109,16 @@ class ShippingOption implements Purchasable
     }
 
     /**
+     * Return the options for this purchasable
+     */
+    public function getOptions(): Collection
+    {
+        return collect([
+            $this->option,
+        ]);
+    }
+
+    /**
      * Return a unique string which identifies the purchasable item.
      *
      * @return string
@@ -144,5 +154,10 @@ class ShippingOption implements Purchasable
     public function getTotalInventory(): int
     {
         return 1;
+    }
+
+    public function isPurchasable(): bool
+    {
+        return true;
     }
 }

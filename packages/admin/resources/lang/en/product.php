@@ -8,15 +8,19 @@ return [
 
     'tabs' => [
         'all' => 'All',
+        'published' => 'Published',
+        'draft' => 'Draft',
     ],
 
     'status' => [
         'unpublished' => [
-            'content' => 'Currently in draft status, this product is hidden across all channels and customer groups.',
+            'content' => 'Currently in draft status, this product is unavailable across all channels and customer groups.',
         ],
         'availability' => [
             'customer_groups' => 'This product is currently unavailable for all customer groups.',
             'channels' => 'This product is currently unavailable for all channels.',
+            'hidden_from_guests' => 'Guests cannot currently see or buy this product. The default customer group is not enabled or visible for it.',
+            'no_default_customer_group' => 'No default customer group is set, so guest visibility cannot be controlled here. Mark one customer group as default to gate guest access.',
         ],
     ],
 

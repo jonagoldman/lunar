@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 use Lunar\Base\BaseModel;
 use Lunar\Base\Traits\HasMacros;
 use Lunar\Base\Traits\HasMedia;
@@ -18,12 +19,14 @@ use Spatie\MediaLibrary\HasMedia as SpatieHasMedia;
 
 /**
  * @property int $id
- * @property \Illuminate\Support\Collection $name
- * @property \Illuminate\Support\Collection $label
+ * @property AsArrayObject $name
+ * @property ?AsArrayObject $label
  * @property int $position
  * @property ?string $handle
- * @property ?\Illuminate\Support\Carbon $created_at
- * @property ?\Illuminate\Support\Carbon $updated_at
+ * @property bool $shared
+ * @property ?AsArrayObject $meta
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
  */
 class ProductOption extends BaseModel implements Contracts\ProductOption, SpatieHasMedia
 {
@@ -43,6 +46,7 @@ class ProductOption extends BaseModel implements Contracts\ProductOption, Spatie
         'name' => AsArrayObject::class,
         'label' => AsArrayObject::class,
         'shared' => 'boolean',
+        'meta' => AsArrayObject::class,
     ];
 
     /**
